@@ -112,8 +112,6 @@ int main(int argc, char** argv)
         // compare your result with that computed by BLAS
         if (check_accuracy(Ycopy, Y, n) == false)
            printf(" Error: your answer is not the same as that computed by BLAS. \n");
-        else
-           printf(" Your answer matches that computed by BLAS. \n");
     
     } // end loop over problem sizes
 
