@@ -54,7 +54,7 @@ bool check_accuracy(double *A, double *Anot, int nvalues)
 /* The benchmarking program */
 int main(int argc, char** argv) 
 {
-    std::cout << "Description:\t" << dgemv_desc << std::endl << std::endl;
+    std::cout << "\nDescription:\t" << dgemv_desc << std::endl << std::endl;
 
     std::cout << std::fixed << std::setprecision(5);
 
