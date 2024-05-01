@@ -12,6 +12,7 @@
 #include <iostream>
 #include <random>
 #include <vector>
+#include <unistd.h>
 
 #include <cmath> // For: fabs
 
