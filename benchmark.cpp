@@ -95,8 +95,6 @@ int main(int argc, char** argv)
         // insert start timer code here
         std::chrono::time_point<std::chrono::high_resolution_clock> start_time = std::chrono::high_resolution_clock::now();
 
-        sleep(sleep_secs);
-
         std::cout << " Elapsed time is : " << elapsed.count() << " " << std::endl;
 
         // call the method to do the work
