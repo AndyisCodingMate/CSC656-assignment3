@@ -13,7 +13,8 @@ const char* dgemv_desc = "OpenMP dgemv.";
  */
 
 void my_dgemv(int n, double* A, double* x, double* y) {
-
+   
+   /*
    #pragma omp parallel
    {
       int nthreads = omp_get_num_threads();
@@ -21,10 +22,12 @@ void my_dgemv(int n, double* A, double* x, double* y) {
       printf("my_dgemv(): Hello world: thread %d of %d checking in. \n", thread_id, nthreads);
       printf("my_dgemv(): For actual timing runs, please comment out these printf() and omp_get_*() statements. \n");
    }
+   **/
 
-   // insert your dgemv code here. you may need to create additional parallel regions,
-   // and you will want to comment out the above parallel code block that prints out
-   // nthreads and thread_id so as to not taint your timings
-
+   #pragma omp parallel for shared(A, x, y, n) reduction(+: y[:n])
+      for (int row = 0; row < n; row++) {
+         for (int column = 0; column < n; column++) {
+            y[row] += A[(row * n) + column] * x[column];
+         }
+      }
 }
-
