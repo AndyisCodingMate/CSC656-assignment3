@@ -6,9 +6,13 @@ const char* dgemv_desc = "Vectorized implementation of matrix-vector multiply.";
  * where A is n-by-n matrix stored in row-major format, and X and Y are n by 1 vectors.
  * On exit, A and X maintain their input values.
  */
-void my_dgemv(int n, double* A, double* x, double* y) {  
-  for (int i = 0; i < n * n; i++) {
-        y[i / n] += A[i] * x[i % n];
-    }
+void my_dgemv(int n, double* A, double* x, double* y) {
+   // insert your code here: implementation of basic matrix multiply
+   for (int row = 0; row < n; row++) {
+    double sum = 0;
+      for (int column = 0; column < n; column++) {
+         sum += A[(row * n) + column] * x[column];
+      }
+      y[row] += sum;
+   }
 }
-
