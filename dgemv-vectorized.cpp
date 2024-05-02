@@ -16,7 +16,7 @@ void my_dgemv(int n, double *A, double *x, double *y)
       if (x[row] > 0)
       {
          sum += x[row];
-         k++
+         k++;
       }
    }
 }
